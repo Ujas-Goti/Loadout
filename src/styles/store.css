@@ -1,0 +1,529 @@
+:root {
+  --text: #e7f7f4;
+  --bg: #0e1218;
+  --card: #161c25;
+  --line: #2c3844;
+  --muted: #c5d5da;
+  --cyan: #2ef2dc;
+  --sale: #ff4b93;
+  --ok: #3ddea2;
+}
+
+body {
+  --bs-body-color: #e7f7f4;
+  --bs-body-color-rgb: 231, 247, 244;
+  --bs-heading-color: #e7f7f4;
+  --bs-secondary-color: #d5e4e8;
+  --bs-emphasis-color: #e7f7f4;
+  margin: 0;
+  background: var(--bg);
+  color: #e7f7f4;
+  font-family: "Segoe UI", "Avenir Next", "Trebuchet MS", sans-serif;
+}
+
+.site {
+  background: var(--bg);
+}
+
+.site-nav,
+.site-footer {
+  background: #0c1016;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0;
+  margin-right: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+}
+
+.brand-name {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.brand-tag {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--cyan);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.navbar.site-nav .navbar-nav {
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.navbar.site-nav .navbar-nav .nav-link {
+  color: #d5e3e6;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+}
+
+.navbar.site-nav .navbar-nav .nav-link.active,
+.navbar.site-nav .navbar-nav .nav-link:hover {
+  color: #071210;
+  background: var(--cyan);
+}
+
+.cart-count {
+  display: inline-block;
+  min-width: 1.4rem;
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: var(--cyan);
+  color: #071210;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.hero {
+  background: #090c10;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+}
+
+.hero-kicker {
+  margin-bottom: 0.4rem;
+  color: var(--cyan);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-copy {
+  max-width: 36rem;
+  color: var(--muted);
+}
+
+.form-card,
+.buy-box,
+.summary-box,
+.product-card,
+.cart-item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.product-card {
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.card,
+.card-body,
+.product-card,
+.product-card .card-body,
+.product-card h2,
+.product-card p,
+.buy-box,
+.buy-box p,
+.form-card,
+.form-card p,
+.form-label,
+legend,
+.summary-box,
+.summary-box p,
+.cart-item,
+.cart-item p,
+.cart-item h2,
+.detail-specs,
+.detail-specs dd {
+  color: #e7f7f4;
+}
+
+.product-title,
+.detail-title,
+.price-row,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #e7f7f4;
+}
+
+.form-control,
+.form-select {
+  color: #12161c;
+  background-color: #fff;
+}
+
+.photo-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: #10141a;
+}
+
+.product-photo,
+.detail-photo,
+.cart-photo {
+  display: block;
+  width: 100%;
+  background: #10141a;
+}
+
+.product-photo {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.detail-photo {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--cyan);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #fff;
+}
+
+.category-label {
+  margin-bottom: 0.2rem;
+  color: var(--cyan);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-title {
+  margin-bottom: 0.15rem;
+}
+
+.brand-line,
+.rating-line,
+.card-description {
+  color: var(--muted);
+}
+
+.card-description {
+  overflow: hidden;
+  max-height: 4.8em;
+  line-height: 1.6;
+}
+
+.price-row {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.price-sale {
+  color: var(--sale);
+}
+
+.price-original {
+  margin-left: 0.45rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.sale-pill,
+.info-pill {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--sale);
+  border-radius: 999px;
+  color: var(--sale);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-row {
+  min-height: 1.6rem;
+}
+
+.info-pill {
+  margin: 0 0.35rem 0 0;
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.info-pill-sale {
+  border-color: var(--sale);
+  color: var(--sale);
+}
+
+.btn-main,
+.btn-accent {
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.btn-main {
+  background: transparent;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+}
+
+.btn-accent {
+  background: var(--cyan);
+  border: 1px solid var(--cyan);
+  color: #071210;
+}
+
+.btn-main:hover,
+.btn-accent:hover {
+  background: #7dfff2;
+  border-color: #7dfff2;
+  color: #071210;
+}
+
+.btn-accent:disabled {
+  background: #1c3a38;
+  border-color: #1c3a38;
+  color: #6d8582;
+}
+
+.btn-link {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: #fff;
+}
+
+.detail-title {
+  margin-bottom: 0.2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.highlight-list {
+  padding-left: 1.1rem;
+}
+
+.buy-box,
+.summary-box,
+.form-card {
+  padding: 1.1rem;
+}
+
+.swatch-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.swatch {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 2px solid #161c25;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #5c6e76;
+}
+
+.swatch.selected {
+  box-shadow: 0 0 0 2px var(--cyan);
+}
+
+.stock-ok {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.stock-out,
+.form-error {
+  color: var(--sale);
+  font-weight: 700;
+}
+
+.form-success {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.detail-specs {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.spec-list dt {
+  color: var(--muted);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+  padding: 0.9rem;
+}
+
+.cart-photo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.qty-controls,
+.cart-line {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.cart-line {
+  justify-content: space-between;
+}
+
+.qty-button,
+.remove-button,
+.footer-link {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.qty-button {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: #0e1218;
+  color: var(--text);
+}
+
+.qty-button:disabled {
+  color: #5c6a70;
+}
+
+.qty-value {
+  min-width: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.remove-button {
+  color: var(--sale);
+  text-decoration: underline;
+}
+
+.summary-total {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.empty-cart {
+  padding: 1.5rem 0 2rem;
+}
+
+.site-footer {
+  color: var(--text);
+}
+
+.footer-brand,
+.footer-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer-copy {
+  max-width: 36rem;
+  color: var(--muted);
+}
+
+.footer-name {
+  color: var(--cyan);
+}
+
+.pagination .page-link {
+  background: var(--card);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.pagination .page-item.active .page-link {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: #071210;
+}
+
+.pagination .page-item.disabled .page-link {
+  background: var(--card);
+  border-color: var(--line);
+  color: #5c6a70;
+}
+
+@media (max-width: 991.98px) {
+  .navbar.site-nav .navbar-collapse {
+    flex-basis: 100%;
+  }
+
+  .navbar.site-nav .navbar-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+    padding-top: 0.75rem;
+  }
+
+  .navbar.site-nav .navbar-nav .nav-link {
+    width: 100%;
+    text-align: left;
+  }
+
+  .site-footer .d-flex {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .cart-item {
+    grid-template-columns: 96px 1.4fr 140px 120px;
+    align-items: center;
+  }
+
+  .cart-line {
+    display: block;
+    text-align: right;
+  }
+}
