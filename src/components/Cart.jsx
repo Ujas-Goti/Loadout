@@ -1,5 +1,5 @@
 import CartItem from './CartItem.jsx'
-import { cartCount, cartItemKey, cartSubtotal, formatMoney, quantityInCart } from '../utils.js'
+import { cartCount, cartItemKey, cartSubtotal, formatMoney, quantityInCart } from '../js/utils.js'
 
 export default function Cart({ cartItems, products, onIncrease, onDecrease, onRemove }) {
   const count = cartCount(cartItems)

@@ -1,6 +1,6 @@
 import ProductCard from '../components/ProductCard.jsx'
 
-export default function HomeView({ products, onOpenProduct, onNavigate }) {
+export default function HomeView({ products }) {
   const featured = products.filter((product) => product.featuredProduct)
   const arrivals = products.filter((product) => product.newArrival)
 
@@ -11,11 +11,13 @@ export default function HomeView({ products, onOpenProduct, onNavigate }) {
           <p className="hero-kicker">Gaming gear</p>
           <h1>Loadout</h1>
           <p className="hero-copy">
-            Mice, keyboards, headsets, mousepads, and controllers.
+            Loadout is a small shop for PC play. We sell mice, keyboards, headsets,
+            mousepads, and controllers. Photos, prices, sizes, and colors are on each
+            product page.
           </p>
-          <button type="button" className="btn btn-accent" onClick={() => onNavigate('shop')}>
+          <a href="#/shop" className="btn btn-accent">
             Shop
-          </button>
+          </a>
         </div>
       </section>
 
@@ -24,7 +26,7 @@ export default function HomeView({ products, onOpenProduct, onNavigate }) {
         <div className="row g-4">
           {arrivals.map((product) => (
             <div className="col-12 col-sm-6 col-lg-3" key={product.id}>
-              <ProductCard product={product} onOpenProduct={onOpenProduct} />
+              <ProductCard product={product} />
             </div>
           ))}
         </div>
@@ -35,7 +37,7 @@ export default function HomeView({ products, onOpenProduct, onNavigate }) {
         <div className="row g-4">
           {featured.map((product) => (
             <div className="col-12 col-sm-6 col-lg-4" key={product.id}>
-              <ProductCard product={product} onOpenProduct={onOpenProduct} />
+              <ProductCard product={product} />
             </div>
           ))}
         </div>

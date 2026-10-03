@@ -2,7 +2,7 @@ import ProductCard from './ProductCard.jsx'
 
 const PAGE_SIZE = 10
 
-export default function ProductList({ products, page, onOpenProduct }) {
+export default function ProductList({ products, page }) {
   const start = (page - 1) * PAGE_SIZE
   const end = start + PAGE_SIZE
 
@@ -15,7 +15,7 @@ export default function ProductList({ products, page, onOpenProduct }) {
 
         return (
           <div className="col-12 col-sm-6 col-lg-4" key={product.id}>
-            <ProductCard product={product} onOpenProduct={onOpenProduct} />
+            <ProductCard product={product} />
           </div>
         )
       })}

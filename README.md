@@ -20,7 +20,8 @@ Upload the files inside `dist/` to the Cloud Storage bucket. Do not upload `node
 ## Files
 
 - `src/data/products.json` — 25 products, same schema
-- `src/styles/store.css` — custom CSS (Bootstrap 5 is a dependency)
+- `src/css/store.css` — custom CSS (Bootstrap 5 is a dependency)
+- `src/js/utils.js` — cart helpers
 - `public/images/` — product photos from Unsplash
 
 GitHub wiki: https://github.com/Ujas-Goti/Loadout/wiki

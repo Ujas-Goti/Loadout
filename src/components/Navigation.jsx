@@ -1,4 +1,4 @@
-import { cartCount } from '../utils.js'
+import { cartCount } from '../js/utils.js'
 
 export function Logo() {
   return (

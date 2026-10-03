@@ -104,11 +104,11 @@ export default function CreateAccountView({ onCreate }) {
       <form className="form-card" onSubmit={handleSubmit} noValidate>
         <div className="row g-3">
           <div className="col-md-6">
-            <label className="form-label" htmlFor="login">
+            <label className="form-label" htmlFor="create-login">
               Login
             </label>
             <input
-              id="login"
+              id="create-login"
               name="login"
               className={`form-control ${errors.login ? 'is-invalid' : ''}`}
               value={values.login}
@@ -118,11 +118,11 @@ export default function CreateAccountView({ onCreate }) {
             {errors.login && <div className="invalid-feedback">{errors.login}</div>}
           </div>
           <div className="col-md-6">
-            <label className="form-label" htmlFor="password">
+            <label className="form-label" htmlFor="create-password">
               Password
             </label>
             <input
-              id="password"
+              id="create-password"
               name="password"
               type="password"
               className={`form-control ${errors.password ? 'is-invalid' : ''}`}
@@ -133,11 +133,11 @@ export default function CreateAccountView({ onCreate }) {
             {errors.password && <div className="invalid-feedback">{errors.password}</div>}
           </div>
           <div className="col-12">
-            <label className="form-label" htmlFor="email">
+            <label className="form-label" htmlFor="create-email">
               Email
             </label>
             <input
-              id="email"
+              id="create-email"
               name="email"
               type="email"
               className={`form-control ${errors.email ? 'is-invalid' : ''}`}

@@ -19,7 +19,7 @@ function validateLogin(values) {
   return errors
 }
 
-export default function AccountView({ account, signedIn, onSignIn, onSignOut, onNavigate }) {
+export default function AccountView({ account, signedIn, onSignIn, onSignOut }) {
   const [values, setValues] = useState({ login: '', password: '' })
   const [errors, setErrors] = useState({})
 
@@ -81,12 +81,12 @@ export default function AccountView({ account, signedIn, onSignIn, onSignOut, on
       <form className="form-card" onSubmit={handleSubmit} noValidate>
         {errors.form && <p className="form-error">{errors.form}</p>}
         <div className="mb-3">
-          <label className="form-label" htmlFor="login">
-            Login
-          </label>
-          <input
-            id="login"
-            name="login"
+            <label className="form-label" htmlFor="account-login">
+              Login
+            </label>
+            <input
+              id="account-login"
+              name="login"
             className={`form-control ${errors.login ? 'is-invalid' : ''}`}
             value={values.login}
             onChange={handleChange}
@@ -95,12 +95,12 @@ export default function AccountView({ account, signedIn, onSignIn, onSignOut, on
           {errors.login && <div className="invalid-feedback">{errors.login}</div>}
         </div>
         <div className="mb-3">
-          <label className="form-label" htmlFor="password">
-            Password
-          </label>
-          <input
-            id="password"
-            name="password"
+            <label className="form-label" htmlFor="account-password">
+              Password
+            </label>
+            <input
+              id="account-password"
+              name="password"
             type="password"
             className={`form-control ${errors.password ? 'is-invalid' : ''}`}
             value={values.password}
@@ -112,9 +112,9 @@ export default function AccountView({ account, signedIn, onSignIn, onSignOut, on
         <button type="submit" className="btn btn-accent">
           Sign in
         </button>
-        <button type="button" className="btn btn-link" onClick={() => onNavigate('create')}>
+        <a href="#/create-account" className="btn btn-link">
           Create an account
-        </button>
+        </a>
       </form>
     </section>
   )

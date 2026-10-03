@@ -1,4 +1,4 @@
-import { formatMoney } from '../utils.js'
+import { formatMoney } from '../js/utils.js'
 
 export default function CartItem({ item, canIncrease, onIncrease, onDecrease, onRemove }) {
   const lineTotal = item.unitPrice * item.quantity

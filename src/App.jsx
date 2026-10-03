@@ -8,7 +8,7 @@ import ProductDetailView from './views/ProductDetailView.jsx'
 import AccountView from './views/AccountView.jsx'
 import CreateAccountView from './views/CreateAccountView.jsx'
 import CartView from './views/CartView.jsx'
-import { addCartItem, quantityInCart, sameCartItem } from './utils.js'
+import { addCartItem, quantityInCart, sameCartItem } from './js/utils.js'
 
 function readRoute() {
   const path = window.location.hash.replace(/^#/, '') || '/'
@@ -63,10 +63,6 @@ export default function App() {
     window.location.hash = hrefFor(nextView, selectedProductId)
   }
 
-  function openProduct(productId) {
-    window.location.hash = hrefFor('product', productId)
-  }
-
   function addToCart(item) {
     const product = products.find((entry) => entry.id === item.productId)
     const result = addCartItem(cartItems, item, product.quantityInStock)
@@ -116,10 +112,8 @@ export default function App() {
     <div className="site d-flex flex-column min-vh-100">
       <Navigation view={view} cartItems={cartItems} />
       <main className="flex-grow-1">
-        {view === 'home' && (
-          <HomeView products={products} onOpenProduct={openProduct} onNavigate={navigate} />
-        )}
-        {view === 'shop' && <ShopView products={products} onOpenProduct={openProduct} />}
+        {view === 'home' && <HomeView products={products} />}
+        {view === 'shop' && <ShopView products={products} />}
         {view === 'product' && (
           <ProductDetailView product={selectedProduct} onAddToCart={addToCart} />
         )}
@@ -129,7 +123,6 @@ export default function App() {
             signedIn={signedIn}
             onSignIn={() => setSignedIn(true)}
             onSignOut={() => setSignedIn(false)}
-            onNavigate={navigate}
           />
         )}
         {view === 'create' && <CreateAccountView onCreate={createAccount} />}

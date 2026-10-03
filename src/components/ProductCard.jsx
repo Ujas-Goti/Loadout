@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { COLOR_HEX, formatMoney, getUnitPrice, isOnSale, salePercent } from '../utils.js'
+import { COLOR_HEX, formatMoney, getUnitPrice, isOnSale, salePercent } from '../js/utils.js'
 
 function Price({ product }) {
   if (isOnSale(product)) {
@@ -24,22 +24,28 @@ function Badges({ product }) {
   )
 }
 
-function ProductCardSummary({ product, onOpenProduct }) {
+function ProductCardSummary({ product }) {
+  const href = `#/product/${product.id}`
+
   return (
-    <article className="card product-card h-100" onClick={() => onOpenProduct(product.id)}>
-      <button type="button" className="photo-button" onClick={() => onOpenProduct(product.id)}>
+    <article className="card product-card h-100">
+      <a href={href} className="photo-button">
         <img src={`/images/${product.image}`} alt={product.name} className="product-photo" />
-      </button>
+      </a>
       <div className="card-body d-flex flex-column">
         <p className="category-label">{product.category}</p>
-        <h2 className="h5 product-title">{product.name}</h2>
+        <h2 className="h5 product-title">
+          <a href={href} className="product-name-link">
+            {product.name}
+          </a>
+        </h2>
         <p className="brand-line">by {product.brand}</p>
         <p className="card-description">{product.description}</p>
         <Price product={product} />
         <Badges product={product} />
-        <button type="button" className="btn btn-main mt-auto" onClick={() => onOpenProduct(product.id)}>
+        <a href={href} className="btn btn-main mt-auto">
           View product
-        </button>
+        </a>
       </div>
     </article>
   )
@@ -241,10 +247,10 @@ function ProductCardDetail({ product, onAddToCart }) {
   )
 }
 
-export default function ProductCard({ product, layout = 'summary', onOpenProduct, onAddToCart }) {
+export default function ProductCard({ product, layout = 'summary', onAddToCart }) {
   if (layout === 'detail') {
     return <ProductCardDetail product={product} onAddToCart={onAddToCart} />
   }
 
-  return <ProductCardSummary product={product} onOpenProduct={onOpenProduct} />
+  return <ProductCardSummary product={product} />
 }

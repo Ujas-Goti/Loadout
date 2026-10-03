@@ -141,7 +141,6 @@ body {
 
 .product-card {
   overflow: hidden;
-  cursor: pointer;
   color: var(--text);
 }
 
@@ -191,6 +190,7 @@ h6 {
   padding: 0;
   border: 0;
   background: #10141a;
+  text-decoration: none;
 }
 
 .product-photo,
@@ -234,6 +234,15 @@ h6 {
 
 .product-title {
   margin-bottom: 0.15rem;
+}
+
+.product-name-link {
+  color: #e7f7f4;
+  text-decoration: none;
+}
+
+.product-name-link:hover {
+  color: var(--cyan);
 }
 
 .brand-line,
@@ -492,6 +501,22 @@ h6 {
   background: var(--card);
   border-color: var(--line);
   color: #5c6a70;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.product-index {
+  color: #e7f7f4;
+  --bs-table-bg: #161c25;
+  --bs-table-color: #e7f7f4;
+  --bs-table-border-color: #2c3844;
+}
+
+.product-index th,
+.product-index td {
+  color: #e7f7f4;
 }
 
 @media (max-width: 991.98px) {
